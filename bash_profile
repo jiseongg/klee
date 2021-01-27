@@ -16,3 +16,7 @@ export LD_LIBRARY_PATH=/home/vagrant/.local/lib:${LD_LIBRARY_PATH}
 # klee
 export PATH=/home/vagrant/klee/bin:${PATH}
 
+# python venv
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
+source ~/.local/bin/virtualenvwrapper.sh
