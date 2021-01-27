@@ -8,11 +8,12 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.hostname = "klee"
   config.vm.define "klee"
-  
+  config.vm.network "forwarded_port", guest: 8888, host:9999
+
   config.vm.provider "virtualbox" do |vb|
     vb.name = "klee"
-    vb.memory = "8192"
-    vb.cpus = "4"
+    vb.memory = "16384"
+    vb.cpus = "6"
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
   end
   
